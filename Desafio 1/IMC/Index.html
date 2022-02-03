@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>Desafio IMC - APIs & Web Applications </head>
+
+    <body>
+        <br />
+        <table>
+            <tr>
+                <th>
+                    Peso:
+                </th>
+                <td>
+                    <input type="number" id="peso" name="peso" class="peso" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Altura:
+                </th>
+                <td>
+                    <input type="number" id="altura" name="altura" class="altura" />
+                </td>
+            </tr>
+        </table>
+        
+        <br />
+
+        <input type="button" id="btnCalcular" name="btnCalcular" class="btnCalcular" value="Calcular" />
+
+        <script type="text/javascript" >
+            btnCalcular = document.querySelector(".btnCalcular");
+            btnCalcular.addEventListener("click", ()=>{
+                peso =  parseFloat(document.querySelector(".peso").value);
+                altura =  parseFloat(document.querySelector(".altura").value);
+                
+                Resultado = peso / (altura * altura);
+                
+                var retorno = "";
+
+                if(Resultado < 18.5 )
+                    retorno = "Magreza - IMC = " + Resultado;
+                else if(Resultado > 18.5 && Resultado < 24.9)
+                    retorno = "Normal - IMC = " + Resultado;
+                else if(Resultado > 24.9 && Resultado < 30)
+                    retorno = "Sobrepeso - IMC = " + Resultado;
+                else if(Resultado > 30 )
+                    retorno = "Obesidade - IMC = " + Resultado;
+
+                alert(retorno);
+
+            });
+
+        </script>
+
+    </body>
+</html>
